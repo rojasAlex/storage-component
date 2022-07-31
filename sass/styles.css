@@ -1,0 +1,257 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --PaleBlue: hsl(243, 100%, 93%);
+  --GrayishBlue: hsl(229, 7%, 55%;);
+  --DarkBlue: hsl(228, 56%, 26%);
+  --VeryDarkBlue: hsl(229, 57%, 11%);
+  --progressLength: 81.5%;
+}
+
+body {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  font-family: 'Raleway';
+  font-size: 14px;
+  min-height: 100vh;
+}
+
+main {
+  background: url(/images/bg-mobile.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: top bottom;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 25px;
+  gap: 15px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
+}
+
+main .component {
+  width: 340px;
+  background-color: var(--DarkBlue);
+  padding: 40px 30px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
+}
+
+main .component-icons {
+  border-radius: 8px 100px 8px 8px;
+}
+
+main .component-icons .folders {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+  margin-top: 35px;
+}
+
+main .component-icons .icon {
+  background-color: var(--VeryDarkBlue);
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+}
+
+main .component-description {
+  border-radius: 8px;
+  position: relative;
+}
+
+main .component-description p {
+  color: var(--PaleBlue);
+  font-weight: 400;
+  text-align: center;
+}
+
+main .component-description p span {
+  font-weight: 700;
+}
+
+main .component-description .bar-progress {
+  height: 20px;
+  background-color: #141d48;
+  border-radius: 12px;
+  margin: 1rem 0 0.5rem 0;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+main .component-description .bar-progress::before {
+  content: url(/images/circle.svg);
+  height: 15px;
+  width: 100%;
+  left: -100%;
+  border-radius: 12px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffa399), to(#ff4d97));
+  background: linear-gradient(#ffa399, #ff4d97);
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-animation: bar-progress 2s ease-in-out forwards;
+          animation: bar-progress 2s ease-in-out forwards;
+}
+
+main .component-description .space {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main .component-description .space span {
+  color: var(--PaleBlue);
+}
+
+main .component-description .tooltip {
+  width: 170px;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  position: absolute;
+  margin-top: 10px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .component-description .tooltip .num {
+  font-weight: 700;
+  font-size: 2rem;
+  margin-right: 0.5rem;
+}
+
+main .component-description .tooltip .gb-left {
+  color: var(--PaleBlue);
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+@-webkit-keyframes bar-progress {
+  to {
+    -webkit-transform: translateX(var(--progressLength));
+            transform: translateX(var(--progressLength));
+  }
+}
+
+@keyframes bar-progress {
+  to {
+    -webkit-transform: translateX(var(--progressLength));
+            transform: translateX(var(--progressLength));
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    padding: 0;
+    background: var(--VeryDarkBlue);
+  }
+  main {
+    width: 100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background: url(/images/bg-desktop.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center 48vh;
+    padding: 0;
+  }
+  main .component-icons {
+    width: 30%;
+  }
+  main .component-description {
+    width: 500px;
+    margin-top: 37.5px;
+  }
+  main .component-description p {
+    text-align: left;
+  }
+  main .component-description .tooltip {
+    top: -50px;
+    left: 58%;
+    width: 180px;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    padding: 0.5rem;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
+  }
+  main .component-description .tooltip::after {
+    content: "";
+    position: absolute;
+    top: 89%;
+    right: 0;
+    border: 1rem solid transparent;
+    border-right-color: white;
+    border-top-color: white;
+  }
+  main .component-description .tooltip .num {
+    font-size: 40px;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
